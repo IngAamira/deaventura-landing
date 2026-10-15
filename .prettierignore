@@ -1,0 +1,14 @@
+# build y dependencias
+node_modules/
+.next/
+out/
+build/
+dist/
+coverage/
+
+# documentación de origen del cliente (no reformatear)
+docs/
+
+# archivos generados
+package-lock.json
+next-env.d.ts
