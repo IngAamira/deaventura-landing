@@ -1,653 +1,106 @@
 # MEMORY.md
 
-Memoria operativa del proyecto entre sesiones.
+Memoria operativa del proyecto entre sesiones. Representa el **estado real verificado** contra el código y la configuración.
 
-Este archivo representa el **estado actual del proyecto**, no las reglas permanentes de ingeniería.  
-Las reglas permanentes deben permanecer en `AGENTS.md`.
-
-## Reglas de mantenimiento
-
-- Mantener este archivo breve.
-- Registrar únicamente información que ayude a continuar el trabajo correctamente.
-- Actualizarlo cuando cambie el estado real del proyecto.
-- Eliminar información obsoleta.
-- No duplicar documentación técnica extensa.
-- No guardar secretos, credenciales, tokens, claves privadas ni datos personales sensibles.
-- No asumir que una sección está completa solo porque existe documentación al respecto.
-- El estado real del proyecto debe verificarse contra el código, configuración y demás artefactos existentes.
+Las reglas permanentes de ingeniería viven en `AGENTS.md`; las decisiones arquitectónicas y su justificación, en `docs/arquitectura.md`. Reglas de este archivo: mantenerlo breve, sin secretos, sin inventar datos, y eliminar lo obsoleto.
 
 ---
 
-# 1. Identidad del proyecto
+## 1. Identidad
 
-**Nombre:** `PENDIENTE`
+**Cliente:** DeAventura — caminatas ecológicas, senderismo, trekking y turismo responsable en Medellín, Antioquia y Colombia.
 
-**Descripción breve:**  
-`PENDIENTE`
+**Objetivo del sitio:** posicionar páginas comerciales y artículos en buscadores, captar reservas por WhatsApp, mostrar servicios, salidas privadas, reseñas de Google y redes sociales.
 
-**Objetivo principal:**  
-`PENDIENTE`
+**Fuentes de verdad del negocio:** `docs/Info.md` (alcance), `docs/Info-goole-maps.md` (ficha de Google: 5,0 ★ / 166 reseñas, dirección, teléfono, precio de referencia de "Ruta de las cascadas").
 
-**Problema que resuelve:**  
-`PENDIENTE`
+**Estado del proyecto:** `EN DESARROLLO — Fase 1 (entorno) completada; la web no está construida.`
 
-**Usuarios / actores principales:**  
-`PENDIENTE`
+**Rama principal:** `trunk` (remoto `origin/trunk` configurado).
 
-**Estado del proyecto:**  
-`INICIAL | EN DESARROLLO | BLOQUEADO | ESTABILIZACIÓN | PRODUCCIÓN`
+## 2. Estado actual
 
-**Repositorio:**  
-`PENDIENTE`
+**Última actualización:** 2026-10-15
 
-**URL del repositorio:**  
-`PENDIENTE`
+**Último trabajo realizado:** Fase 1 — auditoría del entorno, decisión de arquitectura, scaffold de Next.js 16 validado, configuración de OpenCode (agentes, skills, permisos) y documentación.
 
-**Entorno(s) de ejecución:**  
-`PENDIENTE`
+**Bloqueos:** ninguno técnico. Pendientes de decisión del cliente en §7.
 
-**URL(s) de desarrollo / staging / producción:**  
-`PENDIENTE`
+**Validaciones ejecutadas (2026-10-15, todas superadas):** `npm run lint` ✓ · `npm run format:check` ✓ · `npm run build` ✓ (rutas `/` y `/_not-found` estáticas) · `npm run typecheck` ✓ (tras build).
 
-**Responsable / propietario:**  
-`PENDIENTE`
+## 3. Stack (verificado contra package.json y build real)
 
----
+| Área                                    | Tecnología                                                                        | Versión                                      |
+| --------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------- |
+| Framework                               | Next.js (App Router, `cacheComponents`)                                           | 16.4.1                                       |
+| UI                                      | React                                                                             | 19.3.0                                       |
+| Lenguaje                                | TypeScript (strict)                                                               | ^5 (resuelto en lockfile)                    |
+| Estilos                                 | Tailwind CSS                                                                      | ^4 (CSS-first, via `@tailwindcss/turbopack`) |
+| Lint / format                           | ESLint + eslint-config-next + eslint-config-prettier / Prettier + plugin Tailwind | ^9 / ^3                                      |
+| Runtime / gestor                        | Node.js v26.10.0 / npm 11.19.1                                                    | —                                            |
+| Base de datos / backend / CMS / testing | `NO APLICA` en v1                                                                 | —                                            |
+| Despliegue / dominio                    | `PENDIENTE` (ver §7)                                                              | —                                            |
 
-# 2. Estado actual
-
-> Esta sección debe responder rápidamente: **¿dónde está el proyecto ahora mismo?**
-
-**Estado verificado:**  
-`Proyecto nuevo / descubrimiento inicial`
-
-**Última actualización:**  
-`PENDIENTE`
-
-**Último trabajo realizado:**  
-`PENDIENTE`
-
-**Trabajo actualmente en curso:**  
-`PENDIENTE`
-
-**Bloqueos actuales:**  
-`Ninguno conocido`
-
-**Riesgos conocidos:**  
-`Ninguno conocido`
-
-**Decisiones pendientes:**  
-`PENDIENTE`
-
----
-
-# 3. Objetivos y alcance
-
-## Objetivos actuales
-
-- `PENDIENTE`
-
-## Fuera de alcance
-
-- `PENDIENTE`
-
-## Restricciones conocidas
-
-- `PENDIENTE`
-
-## Requisitos no funcionales relevantes
-
-Registrar únicamente los que realmente apliquen:
-
-- Rendimiento: `PENDIENTE`
-- Seguridad: `PENDIENTE`
-- Disponibilidad: `PENDIENTE`
-- Escalabilidad: `PENDIENTE`
-- Accesibilidad: `PENDIENTE`
-- SEO: `PENDIENTE / NO APLICA`
-- Observabilidad: `PENDIENTE`
-- Compatibilidad: `PENDIENTE`
-- Coste: `PENDIENTE`
-- Privacidad / protección de datos: `PENDIENTE`
-
----
-
-# 4. Stack tecnológico
-
-Esta sección debe completarse **después del descubrimiento real del proyecto**.
-
-No inventar valores.
-
-| Área | Tecnología / herramienta | Versión | Estado |
-|---|---|---|---|
-| Lenguaje principal | `PENDIENTE` | `PENDIENTE` | `PENDIENTE` |
-| Framework | `PENDIENTE` | `PENDIENTE` | `PENDIENTE` |
-| Runtime | `PENDIENTE` | `PENDIENTE` | `PENDIENTE` |
-| Gestor de dependencias | `PENDIENTE` | `PENDIENTE` | `PENDIENTE` |
-| Base de datos | `PENDIENTE / NO APLICA` | `PENDIENTE` | `PENDIENTE` |
-| ORM / acceso a datos | `PENDIENTE / NO APLICA` | `PENDIENTE` | `PENDIENTE` |
-| Testing | `PENDIENTE / NO APLICA` | `PENDIENTE` | `PENDIENTE` |
-| Linting | `PENDIENTE / NO APLICA` | `PENDIENTE` | `PENDIENTE` |
-| Formateo | `PENDIENTE / NO APLICA` | `PENDIENTE` | `PENDIENTE` |
-| Build | `PENDIENTE` | `PENDIENTE` | `PENDIENTE` |
-| CI/CD | `PENDIENTE / NO APLICA` | `PENDIENTE` | `PENDIENTE` |
-| Hosting | `PENDIENTE` | `PENDIENTE` | `PENDIENTE` |
-| Infraestructura | `PENDIENTE` | `PENDIENTE` | `PENDIENTE` |
-
-## Regla
-
-Si una tecnología todavía no ha sido elegida, utilizar:
+## 4. Estructura real
 
 ```text
-PENDIENTE
+src/app/            layout.tsx, page.tsx (placeholder de create-next-app, en inglés)
+src/components/     (creará la Fase 2)
+src/lib/            (creará la Fase 2)
+public/             SVGs del scaffold
+docs/               Info.md, Info-goole-maps.md, arquitectura.md
+.opencode/          agents/ (arquitecto, frontend, seo, qa), skills/ (4 skills)
+opencode.jsonc      permisos y watcher locales
+AGENTS.md           reglas permanentes (incluye bloque nextjs-agent-rules regenerado por next dev)
+skills-lock.json    procedencia y hash de las skills instaladas
 ```
 
-No sustituirlo por una tecnología por defecto.
+Comandos reales: `npm run dev | build | start | lint | typecheck | format | format:check`. `typecheck` requiere un `build` o `dev` previo (tipos generados por Next.js).
 
----
+## 5. Decisiones consolidadas
 
-# 5. Estructura actual del proyecto
+1. **Next.js 16 App Router + TS + Tailwind v4** (no SPA con Vite): HTML estático indexable y metadata API nativas; comparativa completa en `docs/arquitectura.md`.
+2. **Blog con MDX local en `content/`** en la Fase 2 (sin CMS externo por ahora).
+3. **Reseñas de Google: selección manual curada** recomendada para v1; Places API queda `PENDIENTE` (requiere cuenta de facturación).
+4. **Contacto por WhatsApp vía enlaces `wa.me`**: sin backend ni credenciales.
+5. **npm** como gestor de paquetes (no pnpm/yarn/bun, no instalados en el entorno).
 
-Registrar únicamente la estructura que exista realmente.
+## 6. Entorno de agentes (OpenCode v2.0.24)
 
-```text
-PENDIENTE
-```
+- Agentes: `.opencode/agents/{arquitecto,frontend,seo,qa}.md` — arquitecto y qa son solo lectura; frontend y seo pueden editar.
+- Skills instaladas localmente (instrucciones externas revisadas, contenido Markdown sin ejecutables): `vercel-react-best-practices` (vercel-labs), `web-design-guidelines` (vercel-labs), `seo-audit` (coreyhaines31/marketingskills), `accessibility` (addyosmani/web-quality-skills). Procedencia en `skills-lock.json`; actualizar con `npx skills update`.
+- Permisos en `opencode.jsonc`: `npm publish` denegado; `git push`, `git reset --hard` y `git clean` piden confirmación.
 
-## Puntos de entrada
+## 7. Decisiones y servicios pendientes (bloquean o condicionan la Fase 2)
 
-`PENDIENTE`
+| Pendiente                                | Tipo        | Detalle                                                                 |
+| ---------------------------------------- | ----------- | ----------------------------------------------------------------------- |
+| Fotografía y vídeo propios               | Cliente     | Sin ellos no hay hero ni galería; deben incluir derechos de uso         |
+| Reseñas de Google (vía)                  | Cliente     | Curado manual (recomendado) vs Places API (API key + facturación)       |
+| Despliegue y dominio                     | Cliente     | Vercel (recomendado) / Netlify / Cloudflare Pages                       |
+| Versión en inglés                        | Cliente/SEO | Afecta a hreflang y estrategia de contenidos                            |
+| Número y precio exacto de salidas        | Cliente     | Solo hay precio de referencia ($33.000 Ruta de las cascadas) en `docs/` |
+| Tests (unitarios/E2E), Lighthouse/axe CI | Técnico     | Evaluar en Fase 2 con UI real; no añadidos aún                          |
+| `.env.example`                           | Técnico     | No creado: ninguna variable es necesaria en v1                          |
 
-## Módulos / dominios principales
+## 8. Riesgos conocidos
 
-- `PENDIENTE`
+| Riesgo                                                             | Mitigación                                                                       |
+| ------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| El bloque `nextjs-agent-rules` de AGENTS.md lo regenera `next dev` | Está commiteado tal cual; no eliminarlo de los diffs                             |
+| Skills externas pueden desactualizarse o contradecir convenciones  | Tratadas como orientación; prevalecen AGENTS.md y docs oficiales (§15 AGENTS.md) |
+| Contenido de cliente sin verificar (precios, datos de contacto)    | Solo usar datos de `docs/`; marcar `PENDIENTE` y preguntar                       |
 
-## Componentes importantes
+## 9. Trabajo pendiente (siguiente fase)
 
-- `PENDIENTE`
+**Fase 2 — construir la web (no iniciada):**
 
-## Configuración relevante
+1. Diseño y estructura de rutas (home, servicios/experiencias, salidas privadas, blog, contacto).
+2. Sistema de diseño: tokens de marca (colores, tipografía, espaciados) en `globals.css`.
+3. Integrar MDX para el blog (`content/` + `generateStaticParams`).
+4. Metadatos, `sitemap.ts`, `robots.ts`, JSON-LD, Google Reviews (sección), redes y WhatsApp.
+5. Medios optimizados y validaciones finales (lint/build/typecheck + revisión a11y/rendimiento).
 
-- `PENDIENTE`
+## 10. Discrepancias doc vs realidad
 
-## Archivos críticos
-
-- `PENDIENTE`
-
----
-
-# 6. Arquitectura actual
-
-**Tipo de arquitectura:**  
-`PENDIENTE`
-
-**Descripción breve:**  
-`PENDIENTE`
-
-**Principales límites / módulos:**  
-
-- `PENDIENTE`
-
-**Flujo principal del sistema:**  
-
-```text
-PENDIENTE
-```
-
-**Dependencias importantes entre módulos:**  
-
-- `PENDIENTE`
-
-**Decisiones arquitectónicas consolidadas:**  
-
-- `PENDIENTE`
-
-## Importante
-
-Esta sección describe **la arquitectura que realmente existe**, no la arquitectura deseada.
-
-Si existe una arquitectura objetivo diferente, documentarla explícitamente como propuesta o pendiente.
-
----
-
-# 7. Entornos
-
-## Desarrollo
-
-**Configuración:**  
-`PENDIENTE`
-
-**Comando / proceso de ejecución:**  
-`PENDIENTE`
-
-## Testing
-
-**Configuración:**  
-`PENDIENTE`
-
-**Comando / proceso:**  
-`PENDIENTE`
-
-## Staging
-
-**Configuración:**  
-`PENDIENTE`
-
-**URL:**  
-`PENDIENTE`
-
-## Producción
-
-**Configuración:**  
-`PENDIENTE`
-
-**URL:**  
-`PENDIENTE`
-
-## Variables de entorno
-
-Registrar únicamente **nombres y propósito**, nunca sus valores sensibles.
-
-| Variable | Propósito | Obligatoria | Entornos |
-|---|---|---|---|
-| `PENDIENTE` | `PENDIENTE` | `PENDIENTE` | `PENDIENTE` |
-
----
-
-# 8. Dependencias e integraciones externas
-
-## Servicios externos
-
-- `PENDIENTE`
-
-## APIs externas
-
-- `PENDIENTE`
-
-## Proveedores
-
-- `PENDIENTE`
-
-## Integraciones
-
-- `PENDIENTE`
-
-## Dependencias críticas
-
-- `PENDIENTE`
-
-Registrar aquí únicamente integraciones realmente existentes o decisiones ya aprobadas.
-
----
-
-# 9. Datos y persistencia
-
-**¿El sistema maneja datos persistentes?**  
-`PENDIENTE`
-
-**Sistema de almacenamiento:**  
-`PENDIENTE`
-
-**Modelo de datos:**  
-`PENDIENTE`
-
-**Migraciones:**  
-`PENDIENTE`
-
-**Backups / recuperación:**  
-`PENDIENTE`
-
-**Datos sensibles:**  
-`PENDIENTE`
-
-**Reglas importantes de integridad:**  
-
-- `PENDIENTE`
-
-**Cambios de datos pendientes:**  
-
-- `PENDIENTE`
-
----
-
-# 10. APIs y contratos
-
-**¿Existen APIs propias?**  
-`PENDIENTE`
-
-**Tipo:**  
-`PENDIENTE`
-
-**Contratos principales:**  
-
-- `PENDIENTE`
-
-**Consumidores conocidos:**  
-
-- `PENDIENTE`
-
-**Versionado:**  
-`PENDIENTE`
-
-**Compatibilidad hacia atrás requerida:**  
-`PENDIENTE`
-
-**Cambios de contrato pendientes:**  
-
-- `PENDIENTE`
-
----
-
-# 11. Seguridad
-
-## Estado
-
-`PENDIENTE`
-
-## Autenticación
-
-`PENDIENTE / NO APLICA`
-
-## Autorización
-
-`PENDIENTE / NO APLICA`
-
-## Gestión de secretos
-
-`PENDIENTE`
-
-## Datos sensibles
-
-`PENDIENTE`
-
-## Riesgos conocidos
-
-- `PENDIENTE`
-
-## Medidas implementadas
-
-- `PENDIENTE`
-
-No almacenar credenciales, tokens, contraseñas, claves privadas ni secretos en este archivo.
-
----
-
-# 12. Validación y calidad
-
-Registrar las herramientas y comandos **reales** del proyecto.
-
-| Validación | Comando / procedimiento | Estado |
-|---|---|---|
-| Tests | `PENDIENTE` | `PENDIENTE` |
-| Lint | `PENDIENTE` | `PENDIENTE` |
-| Type checking | `PENDIENTE` | `PENDIENTE` |
-| Build | `PENDIENTE` | `PENDIENTE` |
-| Integración | `PENDIENTE` | `PENDIENTE` |
-| E2E | `PENDIENTE` | `PENDIENTE` |
-| Seguridad | `PENDIENTE` | `PENDIENTE` |
-| Validación manual | `PENDIENTE` | `PENDIENTE` |
-
-## Última validación completa
-
-**Fecha:**  
-`PENDIENTE`
-
-**Resultado:**  
-`PENDIENTE`
-
-**Warnings conocidos:**  
-
-- `PENDIENTE`
-
-**Errores conocidos:**  
-
-- `PENDIENTE`
-
----
-
-# 13. Git y flujo de trabajo
-
-**Rama principal:**  
-`PENDIENTE`
-
-**Estrategia de branching:**  
-`PENDIENTE`
-
-**Convención de commits:**  
-`PENDIENTE`
-
-**Pull Requests:**  
-`PENDIENTE`
-
-**CI/CD:**  
-`PENDIENTE`
-
-**Hooks / automatizaciones locales:**  
-`PENDIENTE`
-
-## Estado actual del repositorio
-
-**Rama activa:**  
-`PENDIENTE`
-
-**Cambios sin commit:**  
-`PENDIENTE`
-
-**Último commit relevante:**  
-`PENDIENTE`
-
-No registrar hashes o detalles históricos que no aporten valor para continuar el trabajo.
-
----
-
-# 14. Decisiones técnicas
-
-Registrar aquí únicamente decisiones que ya hayan sido tomadas.
-
-Formato recomendado:
-
-```text
-[DECISIÓN]
-
-Qué:
-PENDIENTE
-
-Por qué:
-PENDIENTE
-
-Alternativas consideradas:
-PENDIENTE
-
-Consecuencia:
-PENDIENTE
-```
-
-## Decisiones actuales
-
-`Ninguna consolidada todavía.`
-
----
-
-# 15. Decisiones pendientes
-
-Registrar decisiones que requieren resolución antes de continuar o que pueden afectar significativamente al proyecto.
-
-| Decisión | Contexto | Opciones | Impacto | Estado |
-|---|---|---|---|---|
-| `PENDIENTE` | `PENDIENTE` | `PENDIENTE` | `PENDIENTE` | `PENDIENTE` |
-
-No convertir preferencias personales del agente en decisiones del proyecto.
-
----
-
-# 16. Problemas conocidos
-
-Registrar problemas reales y verificables.
-
-| Problema | Impacto | Estado | Acción |
-|---|---|---|---|
-| `PENDIENTE` | `PENDIENTE` | `PENDIENTE` | `PENDIENTE` |
-
-Si un problema se resuelve, actualizar o eliminar la entrada.
-
-No mantener una lista histórica indefinida de problemas ya resueltos.
-
----
-
-# 17. Riesgos
-
-Registrar riesgos que puedan afectar significativamente al proyecto.
-
-| Riesgo | Probable impacto | Estado | Mitigación |
-|---|---|---|---|
-| `PENDIENTE` | `PENDIENTE` | `PENDIENTE` | `PENDIENTE` |
-
-Priorizar riesgos relacionados con:
-
-- seguridad;
-- datos;
-- arquitectura;
-- dependencias críticas;
-- infraestructura;
-- costes;
-- rendimiento;
-- disponibilidad;
-- integraciones externas;
-- decisiones difíciles de revertir.
-
----
-
-# 18. Trabajo pendiente
-
-Registrar únicamente tareas realmente pendientes.
-
-## Prioridad alta
-
-- `PENDIENTE`
-
-## Prioridad media
-
-- `PENDIENTE`
-
-## Prioridad baja
-
-- `PENDIENTE`
-
-No convertir ideas futuras o mejoras opcionales en tareas obligatorias.
-
----
-
-# 19. Fases del proyecto
-
-Si el proyecto utiliza fases, registrar aquí únicamente las fases que hayan sido definidas.
-
-```text
-PENDIENTE
-```
-
-Formato recomendado:
-
-| Fase | Objetivo | Estado | Bloqueo |
-|---|---|---|---|
-| `PENDIENTE` | `PENDIENTE` | `PENDIENTE` | `PENDIENTE` |
-
-Estados sugeridos:
-
-```text
-NO INICIADA
-EN PROGRESO
-BLOQUEADA
-COMPLETADA
-CANCELADA
-```
-
-No asumir una cantidad fija de fases.
-
-No inventar fases para llenar esta sección.
-
----
-
-# 20. Última tarea realizada
-
-**Tarea:**  
-`PENDIENTE`
-
-**Objetivo:**  
-`PENDIENTE`
-
-**Resultado:**  
-`PENDIENTE`
-
-**Archivos creados:**  
-
-- `PENDIENTE`
-
-**Archivos modificados:**  
-
-- `PENDIENTE`
-
-**Validaciones ejecutadas:**  
-
-- `PENDIENTE`
-
-**Warnings:**  
-
-- `PENDIENTE`
-
----
-
-# 21. Contexto necesario para continuar
-
-Esta sección debe permitir que otro agente continúe el trabajo sin tener que reconstruir innecesariamente el contexto.
-
-Registrar:
-
-- decisiones recientes;
-- cambios importantes;
-- restricciones descubiertas;
-- problemas que deben evitarse;
-- archivos especialmente relevantes;
-- pasos que ya fueron completados;
-- siguiente acción recomendada.
-
-```text
-PENDIENTE
-```
-
----
-
-# 22. Discrepancias entre documentación y realidad
-
-Registrar únicamente discrepancias verificadas.
-
-| Documento / fuente | Estado documentado | Estado real | Acción |
-|---|---|---|---|
-| `PENDIENTE` | `PENDIENTE` | `PENDIENTE` | `PENDIENTE` |
-
-Si una discrepancia se resuelve, actualizar esta sección.
-
-No utilizar esta sección para almacenar decisiones permanentes.
-
----
-
-# 23. Observaciones importantes
-
-Información que pueda ser útil para evitar errores durante futuras sesiones.
-
-- `PENDIENTE`
-
----
-
-# 24. Siguiente paso
-
-**Siguiente acción recomendada:**
-
-> Realizar el descubrimiento inicial del proyecto, identificar su tecnología real, estructura, comandos disponibles, arquitectura existente y restricciones, y reemplazar los valores `PENDIENTE` de esta memoria con información verificada.
-
-**No implementar funcionalidades únicamente para completar esta memoria.**
-
----
-
-# Regla de esta memoria
-
-> **MEMORY.md describe dónde está el proyecto, qué decisiones se han tomado, qué problemas existen y qué debe hacerse después. No define cómo debe trabajar el agente; esas reglas pertenecen a `AGENTS.md`.**
+Ninguna tras la Fase 1. La plantilla generó `src/app/page.tsx` y `layout.tsx` con contenido placeholder en inglés: es temporal y se reemplazará en la Fase 2 (no confundir con el estado final del sitio).

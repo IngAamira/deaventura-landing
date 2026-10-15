@@ -1,0 +1,16 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  // Configuración local del proyecto DeAventura (OpenCode v2).
+  // No mezclar aquí preferencias de CLI (eso vive en ~/.config/opencode/cli.json).
+  "watcher": {
+    "ignore": [".next/**", "out/**", "build/**", "dist/**", "coverage/**"],
+  },
+  "permissions": [
+    // Publicar paquetes en este proyecto: prohibido (es una web, no un paquete npm).
+    { "action": "shell", "resource": "npm publish *", "effect": "deny" },
+    // Operaciones de Git que afectan al remoto requieren confirmación explícita.
+    { "action": "shell", "resource": "git push *", "effect": "ask" },
+    { "action": "shell", "resource": "git reset --hard *", "effect": "ask" },
+    { "action": "shell", "resource": "git clean *", "effect": "ask" },
+  ],
+}
