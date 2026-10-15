@@ -1,26 +1,201 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ------------------------------------------------------------------
+   Design tokens — DeAventura
+   Paleta inspirada en bosque de montaña, tierra, agua y papel.
+   ------------------------------------------------------------------ */
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+
+  /* Neutros cálidos */
+  --color-papel: #faf7f1;
+  --color-papel-2: #f3eee4;
+  --color-arena-100: #e9e1d2;
+  --color-arena-200: #d8cdb9;
+  --color-arena-400: #9c8f77;
+  --color-tinta: #1b1a16;
+  --color-tinta-suave: #4f4a41;
+
+  /* Bosque */
+  --color-bosque-50: #eff7f1;
+  --color-bosque-100: #d9ecdf;
+  --color-bosque-300: #8ec9a6;
+  --color-bosque-500: #2f8f5b;
+  --color-bosque-700: #1c5e3c;
+  --color-bosque-800: #14432b;
+  --color-bosque-900: #0e2f1e;
+  --color-bosque-950: #0a2116;
+
+  /* Tierra */
+  --color-tierra-100: #f4e6d8;
+  --color-tierra-300: #d9a377;
+  --color-tierra-600: #a9602f;
+  --color-tierra-700: #8a4b23;
+
+  /* Agua */
+  --color-agua-100: #dcedf0;
+  --color-agua-500: #2b7f8c;
+  --color-agua-700: #1c5b64;
+
+  /* Canales de contacto */
+  --color-whatsapp: #0e6e57;
+  --color-whatsapp-oscuro: #0a5643;
+
+  --radius-card: 1rem;
+  --shadow-card:
+    0 1px 2px rgb(27 26 22 / 0.06), 0 10px 30px -18px rgb(27 26 22 / 0.35);
+  --shadow-float:
+    0 2px 4px rgb(10 33 22 / 0.18), 0 14px 34px -14px rgb(10 33 22 / 0.45);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: var(--color-papel);
+    color: var(--color-tinta);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-bosque-300);
+    color: var(--color-bosque-950);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-bosque-500);
+    outline-offset: 2px;
+  }
+
+  /* Enlaces dentro del contenido */
+  a {
+    text-underline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Enlace de salto accesible */
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  border-radius: 0.5rem;
+  background-color: var(--color-bosque-800);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  transition: transform 150ms ease-out;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------------------------
+   Tipografía de artículos (MDX). Estilos propios: sin plugins extra.
+   ------------------------------------------------------------------ */
+.prose {
+  max-width: 68ch;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--color-tinta);
+}
+
+.prose > * + * {
+  margin-top: 1.25em;
+}
+
+.prose :where(h2, h3, h4) {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-bosque-900);
+}
+
+.prose h2 {
+  margin-top: 2.25em;
+  font-size: 1.625rem;
+}
+
+.prose h3 {
+  margin-top: 1.75em;
+  font-size: 1.25rem;
+}
+
+.prose :where(a) {
+  color: var(--color-bosque-700);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.prose :where(a):hover {
+  color: var(--color-tierra-700);
+}
+
+.prose :where(strong) {
+  font-weight: 650;
+}
+
+.prose :where(ul, ol) {
+  padding-left: 1.5rem;
+}
+
+.prose :where(ul) {
+  list-style: disc;
+}
+
+.prose :where(ol) {
+  list-style: decimal;
+}
+
+.prose :where(li) {
+  margin-top: 0.5em;
+}
+
+.prose :where(li)::marker {
+  color: var(--color-bosque-500);
+}
+
+.prose :where(blockquote) {
+  border-left: 4px solid var(--color-tierra-300);
+  border-radius: 0 0.5rem 0.5rem 0;
+  background-color: var(--color-papel-2);
+  padding: 1rem 1.25rem;
+  font-style: italic;
+  color: var(--color-tinta-suave);
+}
+
+.prose :where(hr) {
+  border-color: var(--color-arena-200);
+}
+
+.prose :where(figure) {
+  margin-top: 2em;
+}
+
+.prose :where(figcaption) {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-tinta-suave);
 }
