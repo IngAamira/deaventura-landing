@@ -1,0 +1,21 @@
+# dependencias
+node_modules/
+
+# build
+dist/
+dist-ssr/
+*.local
+*.tsbuildinfo
+
+# editor y SO
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+
+# logs
+*.log
+npm-debug.log*
+
+# agentes
+.agents/*
