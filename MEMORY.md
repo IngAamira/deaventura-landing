@@ -16,7 +16,7 @@ Las reglas permanentes de ingeniería viven en `AGENTS.md`; las decisiones arqui
 
 **Estado del proyecto:** `EN DESARROLLO — Fase 2 (web completa) implementada y validada; pendiente de datos del cliente, dominio y despliegue.`
 
-**Rama principal:** `trunk` (remoto `origin/trunk` configurado). Los cambios de Fase 2 están **sin commitear**.
+**Rama principal:** `trunk` (remoto `origin/trunk` configurado). Los cambios de la Fase 2 están **commiteados y pusheados** en `trunk` (histórico lineal, 7 commits; la rama `feature/fase-2-web` ya fue borrada local y remotamente).
 
 ## 2. Estado actual
 
